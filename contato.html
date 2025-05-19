@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio | Contato</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="profile">
+            <img src="img/batman.webp" alt="Minha Foto">
+            <h2>Seu Nome</h2>
+            <p>Web Developer</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-user"></i> Sobre Mim</a></li>
+            <li><a href="formacao.html"><i class="fas fa-graduation-cap"></i> Formação</a></li>
+            <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfólio</a></li>
+            <li class="active"><a href="contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="contact-section">
+            <h1>Entre em <span>Contato</span></h1>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Informações de Contato</h2>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Localização</h3>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telefone</h3>
+                            <p>(XX) XXXX-XXXX</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <h2>Envie uma Mensagem</h2>
+                    
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Seu Nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Seu Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Assunto">
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Sua Mensagem" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+                this.reset();
+            } else {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+            }
+        });
+    </script>
+</body>
+</html>

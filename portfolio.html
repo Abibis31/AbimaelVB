@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio | Portfólio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="profile">
+            <img src="img/batman.webp" alt="Minha Foto">
+            <h2>Seu Nome</h2>
+            <p>Web Developer</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-user"></i> Sobre Mim</a></li>
+            <li><a href="formacao.html"><i class="fas fa-graduation-cap"></i> Formação</a></li>
+            <li class="active"><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfólio</a></li>
+            <li><a href="contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="portfolio-section">
+            <h1>Meu <span>Portfólio</span></h1>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="app">Apps</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <img src="img/projeto1.jpg" alt="Projeto 1">
+                    <div class="portfolio-overlay">
+                        <h3>Site Institucional</h3>
+                        <p>HTML, CSS, JavaScript</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i> Ver Projeto</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="design">
+                    <img src="img/projeto2.jpg" alt="Projeto 2">
+                    <div class="portfolio-overlay">
+                        <h3>Identidade Visual</h3>
+                        <p>Adobe Photoshop, Illustrator</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i> Ver Projeto</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="web">
+                    <img src="img/projeto3.jpg" alt="Projeto 3">
+                    <div class="portfolio-overlay">
+                        <h3>E-commerce</h3>
+                        <p>HTML, CSS, JavaScript, PHP</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i> Ver Projeto</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="app">
+                    <img src="img/projeto4.jpg" alt="Projeto 4">
+                    <div class="portfolio-overlay">
+                        <h3>Aplicativo Mobile</h3>
+                        <p>React Native</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i> Ver Projeto</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="design">
+                    <img src="img/projeto5.jpg" alt="Projeto 5">
+                    <div class="portfolio-overlay">
+                        <h3>Logotipo</h3>
+                        <p>Adobe Illustrator</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i> Ver Projeto</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="web">
+                    <img src="img/projeto6.jpg" alt="Projeto 6">
+                    <div class="portfolio-overlay">
+                        <h3>Blog Pessoal</h3>
+                        <p>WordPress, PHP</p>
+                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i> Ver Projeto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Filtro do portfólio
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove a classe active de todos os botões
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Adiciona a classe active ao botão clicado
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                // Filtra os itens do portfólio
+                document.querySelectorAll('.portfolio-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
